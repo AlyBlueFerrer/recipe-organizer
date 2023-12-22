@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import RecipeCard from "./RecipeCard";
+
+const recipeList = [
+  {
+    name: 'PBJ Sandwich',
+    ingredients: ['Bread', 'Peanut Butter', 'Jelly'], 
+    steps: ['Spread peanut butter', 'Spread jelly', 'Put bread together'],
+    skill: "easy"
+  },
+  {
+    name: 'Burger',
+    ingredients: ['Steak Burger Patty', 'Bun', 'Cheese', 'Lettuce', 'Tomato'], // Tomato was missing
+    steps: ['cook burger patty until done', 'put patty, cheese, lettuce, and tomato on bun'],
+    skill: "intermediate"
+  },
+  {
+    name: 'Pizza',
+    ingredients: ['pizza crust', 'tomato sauce', 'cheese'], 
+    steps:['spread tomato sauce on pizza crust', 'cover with cheese and other toppings', 'bake in oven'], 
+    skill: "easy"
+  },
+]
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Recipe Organizer </h1>
+{recipeList.map(r => <RecipeCard recipe={r} />)}
     </div>
   );
 }
